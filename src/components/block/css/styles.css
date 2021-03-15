@@ -1,0 +1,405 @@
+.block_background{
+    display: flex;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+/*animation: example 5s linear 2s infinite alternate;*/
+
+@keyframes title_animation {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes bottom_animation {
+    0%{
+        transform: scale(0,0);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+@keyframes enter_animation {
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: 60%;
+    }
+}
+
+
+@keyframes arrange_title {
+    0%{
+        bottom: 20%;
+        right: 0;
+        transform: rotate(0);
+        opacity: 1;
+    }
+    50%{
+        bottom: 20%;
+        right: 0;
+        transform: rotate(35deg);
+        opacity: 1;
+    }
+    100%{
+        bottom: 20%;
+        transform: rotate(0);
+        right: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes arrange_enter {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes arrange_bottom {
+    0%{
+        top: 10%;
+        left: 0;
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(2,2);
+    }
+    100%{
+        top: 0;
+        left: 50%;
+    }
+}
+
+.block_background .back_button_div button{
+    border: 0;
+    background-color: transparent;
+    color: white;
+    font-size: larger;
+}
+
+
+.block_background > .main{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.block_background .bottom_div{
+    position: relative;
+    width: 40%;
+    align-self: center;
+    animation: bottom_animation 0.5s linear forwards;
+    height: 70%;
+    overflow: hidden;
+    display: flex;
+    top:10%;
+}
+
+.block_background .bottom_div img{
+    width: 100%;
+    align-self: center;
+}
+
+.block_background .title_div{
+    width: 40%;
+    position: relative;
+    align-self: center;
+    bottom: 20%;
+    opacity: 0;
+    animation: title_animation 1s linear forwards;
+    color: black;
+}
+
+.block_background .enter_div{
+    position: fixed;
+    top: 100%;
+    left: 70%;
+    animation: enter_animation 0.5s ease-out forwards;
+    transition: opacity 1s linear;
+}
+
+.block_background .enter_div button{
+    background-color: green;
+    font-size: xx-large;
+    border: 0;
+    border-radius: 28px;
+    color: white;
+}
+
+.block_background .arrange_title{
+    animation: arrange_title 1s linear forwards;
+}
+
+.block_background .arrange_enter{
+    cursor: default;
+    opacity: 0;
+}
+
+.block_background .arrange_enter button{
+    cursor: default !important;
+}
+
+.block_background .arrange_bottom{
+    animation: arrange_bottom 1s linear forwards;
+}
+
+@keyframes items_animation {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.block_background .background_wrap{
+    position: fixed;
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+}
+.block_background .background{
+    opacity: 0.1;
+}
+
+
+.block_background .back_button_div{
+    z-index: 1;
+}
+
+
+
+
+
+.block_background .items_div{
+    position: fixed;
+    overflow-y: auto;
+    height: 50%;
+    top: 50%;
+    left: 5%;
+    width: 50%;
+    opacity: 0;
+    animation: items_animation 1s linear 1s forwards;
+}
+
+.block_background .items_div .pack{
+    display: flex;
+    justify-content: space-around;
+}
+
+.block_background .items_div .pack button{
+    flex-grow: 1;
+    background-color: white;
+    color: black;
+    border: 0;
+    border-radius: 0;
+}
+
+
+.block_background .item_menu_div{
+    width: 45%;
+    position: fixed;
+    left: 100%;
+    display: flex;
+    height: 100%;
+    transition: left 0.5s;
+    overflow-y: auto;
+    z-index: 2;
+}
+
+.block_background .item_menu_div .title_image{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.block_background .item_menu_div .detail{
+    width: 100%;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.block_background .item_menu_div .title_image{
+    min-height: 100vh;
+}
+
+.block_background .item_menu_div .button_wrap{
+    position: fixed;
+    width: 45%;
+    text-align: end;
+}
+
+.block_background .item_menu_div .button_wrap button{
+    background-color: green;
+    color: white;
+    border: 0;
+    border-radius: 0;
+    font-size: larger;
+}
+
+.block_background .item_menu_div .detail .section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    overflow: auto;
+}
+
+.block_background .item_menu_div .detail .section .options{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: auto;
+    align-items: center;
+}
+
+.block_background .item_menu_div .detail .section .options.none{
+    display: none;
+}
+
+.block_background .item_menu_div .detail .section .options a{
+    display: block;
+    background-color: white;
+    text-align: center;
+    font-size: 1rem;
+    color: black;
+    flex: 1;
+}
+
+
+.block_background .item_menu_div .detail .section .options a .title{
+    background-color: burlywood;
+}
+
+.block_background .item_menu_div .detail .section .options a:hover{
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+
+.block_background .item_menu_div .detail .section .main{
+    width: 50%;
+    padding: 10px;
+}
+
+.block_background .item_menu_div .detail .section .main a{
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.block_background .item_menu_div .detail .section .main a .price{
+    background-color: burlywood;
+    color: black;
+}
+
+.block_background .item_menu_div .detail .section .main a:hover{
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+
+.block_background .item_menu_div .title_image img{
+    width: 100%;
+}
+
+.block_background .item_menu_div .top_image .description{
+    width: 100%;
+    height: fit-content;
+    background-color: burlywood;
+    color: black;
+}
+
+.block_background .item_menu_div .top_image .description p{
+    margin-bottom: 0 !important;
+}
+
+.block_background .item_menu_div .top_image img{
+    background-color: white;
+}
+
+
+.block_background .open_item_menu{
+    left: 55% !important;
+}
+
+.block_background .close_item_menu{
+    left: 100% !important;
+}
+
+@keyframes icons_top_animation {
+    0%{
+        top: -20%;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+
+
+@keyframes arrange_icons_top {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: -20%;
+    }
+}
+
+
+.block_background .icons_top{
+    position: fixed;
+    top: -20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: icons_top_animation 1s ease-out forwards;
+}
+
+.block_background .icons_top.arrange_icons_top{
+    animation: arrange_icons_top 1s ease-out forwards;
+}
+
+
+.block_background .icons_top img{
+    width: 6%;
+}
+
+
+
+@media only screen and (min-height: 1000px){
+    .block_background .background{
+        height: stretch;
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    .block_background .background{
+        width: 100%;
+    }
+}
+
+
+
+
+
+

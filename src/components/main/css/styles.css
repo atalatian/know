@@ -1,0 +1,139 @@
+.main_background{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    transition: opacity 0.7s;
+}
+
+.main_background .logo{
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    margin: auto;
+}
+
+.main_background .logo_image_div{
+    width: 100%;
+    transition: width 0.7s;
+}
+
+.main_background .logo_image_div img{
+    width: 100%;
+}
+
+
+.main_background .top_image_div{
+    width: 100%;
+    height: 40%;
+}
+
+.main_background .top_image_div img{
+    width: 100%;
+}
+
+.main_background .main{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+@keyframes center_animation {
+    0%{
+        left: -6%;
+        transform: rotate(5deg);
+    }
+    50%{
+        left: -10%;
+        transform: rotate(-5deg);
+    }
+    100%{
+        left: -6%;
+        transform: rotate(5deg);
+    }
+}
+
+.main_background .center_image_div{
+    width: 60%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: center_animation;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.main_background .center_image_div img{
+    width: 100%;
+}
+
+.main_background .top_logo_wrap{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.main_background .footer_image_div{
+    display: flex;
+    align-items: flex-end;
+    width: 40%;
+}
+
+.main_background .footer_image_div a{
+    display: block;
+    width: 33.33%;
+}
+
+.main_background .footer_image_div a img{
+    width: 100%;
+}
+
+
+.main_background .menu_button_div{
+    width: 10%;
+    text-align: end;
+}
+
+.main_background .menu_button_div button{
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size: larger;
+}
+
+.main_background .logo .enter_button_div button{
+    background-color: transparent;
+    color: white;
+    border: 1px white solid;
+    font-size: larger;
+}
+
+
+#root .logo_zoom_image{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    z-index: -1;
+}
+
+#root .logo_zoom_image.arrange_logo{
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.7s;
+}
+
+#root .logo_zoom_image img{
+    width: 50%;
+    align-self: center;
+}
+
+.main_background.arrange_background{
+    opacity: 0.1;
+}

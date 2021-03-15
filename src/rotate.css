@@ -1,0 +1,25 @@
+.react-orientation--portrait{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.react-orientation--portrait .rotate{
+    text-align: center;
+}
+
+@keyframes rotate_animation {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
+
+.react-orientation--portrait .rotate svg{
+    font-size: 8rem;
+    animation: rotate_animation 1s ease-out 0.5s forwards;
+}

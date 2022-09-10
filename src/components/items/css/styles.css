@@ -1,0 +1,104 @@
+@keyframes block_animation {
+    0%{
+        opacity: 0;
+        transform: scale(1,1);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(1.2,1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+
+.items_background{
+    display: flex;
+    min-height: 100vh;
+}
+
+.items_background .background_wrap{
+    position: fixed;
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+}
+.items_background .background{
+    opacity: 0.1;
+}
+
+.items_background .col-lg-3{
+    width: 50%;
+}
+
+.items_background .row{
+    justify-content: center;
+}
+
+.items_background .container{
+    margin-top: 65px;
+    z-index: 1;
+}
+
+
+.items_background .switch{
+    animation-name: block_animation;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.items_background a{
+    color: black;
+}
+
+.items_background .card_wrapper{
+    opacity: 0;
+}
+
+.items_background .row > div{
+    margin-bottom: 65px;
+}
+
+.items_background .row > div div{
+    width: 100% !important;
+}
+
+
+.items_background .back_button_div button{
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size: larger;
+}
+
+.items_background .menu_button_div button{
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size: larger;
+}
+
+.items_background .back_button_div{
+    z-index: 1;
+}
+
+
+.items_background .menu_button_div{
+    z-index: 1;
+}
+
+@media only screen and (min-height: 1000px){
+    .items_background .background{
+        height: stretch;
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    .items_background .background{
+        width: 100%;
+    }
+}

@@ -8,7 +8,7 @@ class Rotate extends Component{
         return(
             <div className="rotate">
                 <FontAwesomeIcon icon={faMobileAlt}></FontAwesomeIcon>
-                <div className="detail"><p>Switch To Landscape</p></div>
+                <div className="detail"><p>Switch To Landscape OR<br/>Add to home screen</p></div>
             </div>
         );
     }
